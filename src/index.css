@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 200 20% 97%;
+    --foreground: 200 18% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 18% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 18% 18%;
+
+    --primary: 174 40% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 94% 85%;
+    --secondary-foreground: 200 18% 18%;
+
+    --muted: 200 15% 93%;
+    --muted-foreground: 200 10% 45%;
+
+    --accent: 261 47% 84%;
+    --accent-foreground: 261 30% 30%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 15% 89%;
+    --input: 200 15% 89%;
+    --ring: 174 40% 51%;
+
+    --radius: 0.75rem;
+
+    --peach: 16 100% 87%;
+    --peach-foreground: 16 50% 30%;
+    --teal: 174 40% 51%;
+    --teal-light: 174 40% 95%;
+    --blue-soft: 199 94% 85%;
+    --blue-soft-foreground: 199 50% 25%;
+    --lavender: 261 47% 84%;
+    --lavender-foreground: 261 30% 30%;
+    --dark: 200 18% 18%;
+    --success: 152 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 174 40% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 199 94% 92%;
+    --sidebar-accent-foreground: 200 18% 18%;
+    --sidebar-border: 200 15% 89%;
+    --sidebar-ring: 174 40% 51%;
+  }
+
+  .dark {
+    --background: 200 18% 10%;
+    --foreground: 200 15% 93%;
+
+    --card: 200 18% 14%;
+    --card-foreground: 200 15% 93%;
+
+    --popover: 200 18% 14%;
+    --popover-foreground: 200 15% 93%;
+
+    --primary: 174 40% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 40% 20%;
+    --secondary-foreground: 199 94% 85%;
+
+    --muted: 200 15% 18%;
+    --muted-foreground: 200 10% 60%;
+
+    --accent: 261 30% 25%;
+    --accent-foreground: 261 47% 84%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 15% 20%;
+    --input: 200 15% 20%;
+    --ring: 174 40% 51%;
+
+    --sidebar-background: 200 18% 12%;
+    --sidebar-foreground: 200 15% 90%;
+    --sidebar-primary: 174 40% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 18% 18%;
+    --sidebar-accent-foreground: 200 15% 90%;
+    --sidebar-border: 200 15% 20%;
+    --sidebar-ring: 174 40% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .lucidia-card {
+    @apply bg-card rounded-2xl shadow-sm border border-border p-6 transition-all duration-300;
+  }
+
+  .lucidia-card:hover {
+    @apply shadow-md;
+  }
+
+  .lucidia-card-patient {
+    @apply bg-card rounded-3xl shadow-sm border border-border p-8 transition-all duration-300;
+  }
+
+  .patient-btn {
+    @apply rounded-2xl font-semibold text-lg py-6 px-8 transition-all duration-200 active:scale-95;
+  }
+
+  .status-safe {
+    @apply bg-success text-success-foreground;
+  }
+
+  .status-warning {
+    @apply bg-warning text-warning-foreground;
+  }
+
+  .status-danger {
+    @apply bg-destructive text-destructive-foreground;
+  }
+
+  .severity-high {
+    @apply bg-destructive/10 text-destructive border-destructive/20;
+  }
+
+  .severity-medium {
+    @apply bg-warning/10 text-warning border-warning/20;
+  }
+
+  .severity-low {
+    @apply bg-primary/10 text-primary border-primary/20;
+  }
+
+  .confidence-bar {
+    @apply h-3 rounded-full bg-muted overflow-hidden;
+  }
+
+  .confidence-fill {
+    @apply h-full rounded-full bg-primary transition-all duration-1000 ease-out;
+  }
+}
